@@ -109,9 +109,6 @@ void playMorseSymbol(char dotOrDash) {
     delay(DOT_DELAY);  
 }
 ```
-## 응용하기  
-1. D-day 기능 만들기: 굉장히 오래 전부터 지금까지에 대한 시간
-2. Alarm 기능 만들기: 10초 후에 뭔가 발생하는 것 만들기 
 
 ## 참고
 - [Instructable](https://www.instructables.com/LED-Morse-Code-Encoder)   
