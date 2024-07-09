@@ -37,7 +37,7 @@
 
 
 ## 순서도
-![flowchart](/img/flowchart.png)
+![flowchart](/img/Morsecode-2024-07-09-054712.png)
 ## 코드 설명   
 - Morse array
 ```c
