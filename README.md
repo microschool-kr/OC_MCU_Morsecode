@@ -38,7 +38,7 @@
 ## 순서도
 ![flowchart](/img/Morsecode-2024-07-11-004336.png)
 # 코드    
-## [Morsecode_v0_2.ino](/src/Morsecode_v0_2/Morsecode_v0_2.ino) 
+## [code.ino](/src/code/code.ino) 
 
 # 알아두어야할 함수 
 - playMorseSequence() : 모스 부호를 LED와 피에조 부저로 출력하는 함수
