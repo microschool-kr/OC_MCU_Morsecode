@@ -33,82 +33,16 @@
 |   D8      | anode  |
 |   GND     | cathode  |
 
-## [예제 코드](/src/Morsecode_v0_2/Morsecode_v0_2.ino) 
 
 
 ## 순서도
 ![flowchart](/img/Morsecode-2024-07-11-004336.png)
-## 코드 설명   
-- Morse array
-```c
-const char* LETTERS[] = {
-    ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",    // A-I
-    ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",  // J-R
-    "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."          // S-Z
-};
-const char* NUMBERS[] = {
-    "-----", ".----", "..---", "...--", "....-",  // 0-4
-    ".....", "-....", "--...", "---..", "----."   // 5-9
-};
-```
+# 코드    
+## [Morsecode_v0_2.ino](/src/Morsecode_v0_2/Morsecode_v0_2.ino) 
 
-- loop()
-```c
-void loop() {
-    if (Serial.available()>0) {  
-        char ch = Serial.read();
-
-	if (ch == '\n' || ch == '\r') {
-	    return;
-	}
-        
-        switch(ch) {
-            case 'a'...'z':
-                playMorseSequence(LETTERS[ch - 'a']);
-                break;
-            case 'A'...'Z':
-                playMorseSequence(LETTERS[ch - 'A']);
-                break;
-            case '0'...'9':
-                playMorseSequence(NUMBERS[ch - '0']);
-                break;
-            case ' ':
-                delay(WORD_SPACE);
-                break;
-            default:
-                Serial.println("올바르지 않은 입력입니다. 알파벳, 숫자, 공백만 입력해주세요.");
-        }
-    }
-}
-```
-- playMorseSequence()
-```c
-void playMorseSequence(const char* sequence) {
-    for (int i = 0; sequence[i] != '\0'; i++) {
-        playMorseSymbol(sequence[i]);
-    }
-    delay(LETTER_SPACE); 
-}
-```
-- playModseSymbol()
-```c
-void playMorseSymbol(char dotOrDash) {
-    digitalWrite(LED_PIN, HIGH);  
-    
-    if (dotOrDash == '.') {
-        tone(BUZZER_PIN, TONE_FREQUENCY, DOT_DELAY);
-        delay(DOT_DELAY);
-    } else {  
-        tone(BUZZER_PIN, TONE_FREQUENCY, DASH_DELAY);
-        delay(DASH_DELAY);
-    }
-    
-    digitalWrite(LED_PIN, LOW);  
-    noTone(BUZZER_PIN);  
-    delay(DOT_DELAY);  
-}
-```
-
+# 알아두어야할 함수 
+- playMorseSequence() : 모스 부호를 LED와 피에조 부저로 출력하는 함수
+- playModseSymbol() : 점 또는 대시를 LED와 피에조 부저로 출력하는 함수 
 ## 참고
 - [Instructable](https://www.instructables.com/LED-Morse-Code-Encoder)   
 
