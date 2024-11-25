@@ -4,8 +4,6 @@
 
 ![img](/img/1_Morsecode.jpg)
 
-[![YouTube Channel Views](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/0wc_KVmtkyU?si=mvlG9nImjaJ2mzD0)
-
 ## 📝 프로젝트 소개
 이 프로젝트는 아두이노를 사용하여 텍스트를 모스 부호로 변환하고, LED와 부저를 통해 시각적/청각적 신호로 출력하는 장치를 만드는 과정을 설명합니다. 키보드로 입력한 문자를 자동으로 모스 부호로 변환하여 빛과 소리로 전달합니다.
 
